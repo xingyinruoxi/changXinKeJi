@@ -1,43 +1,4 @@
-'use strict';
-(function () {
-    //导航滚动
-    function winScrollTop() {
-        var $banerHeight=$('.scrollHeight').height();
-        $(window).scroll(function () {
-            var $header=$('#header');
-            var scrollTop=$(window).scrollTop();
-            if(scrollTop>=($banerHeight-$header.height())){
-                // $('#header').css('top',0).addClass('bg');
-                $header.addClass('bg');
-                if(window.location.pathname.indexOf('aboutus')<0){
-                    $header.css('top','0');
-                }
-            }else{
-                $header.removeClass('bg');
-                if(window.location.pathname.indexOf('aboutus')<0){
-                    $header.css('top','-85px');
-                }
-            }
-        });
-    }
-    function curpage() {
-        if(window.location.search.indexOf('curpage')>0){
-            $('html,body').animate({'scrollTop':'640px'});
-            $('#header').find('nav').find('a').eq(1).addClass('active').siblings().removeClass('active');
-        }
-    }
-    function start() {
-        if(window.location.pathname.indexOf('aboutus')>0){
-            $('#header').css('top','0');
-        }
-        //导航滚动
-         winScrollTop();
-        curpage();
-    }
-    return {
-        start: start
-    }
-}()).start();
+
 'use strict';
 (function () {
    /* if(window.location.search.indexOf('join')>0){
@@ -109,12 +70,12 @@
     }*/
 
     //我们的产品适配手机
-    function itemBox() {
+   /* function itemBox() {
         $('.item-box').on('touchend', function (e) {
             $('.dl-product').find('li').removeClass('active');
             $(this).closest('li').addClass('active');
         });
-    }
+    }*/
 
     //发送短信验证码输入框显示
     // function showMsgCode() {
@@ -132,7 +93,7 @@
         //发送短信验证码输入框显示
         //showMsgCode();
         //我们的产品适配手机
-        itemBox();
+        // itemBox();
     }
 
     return {
@@ -142,14 +103,9 @@
 
 'use strict';
 (function () {
-    //加入我们
-    function scrollTop() {
-        if(window.location.search.indexOf('join')>0){
-            $('html,body').animate({'scrollTop':'1496px'});
-        }
-    }
+
     //选项卡
-    function tab() {
+   /* function tab() {
         var $accord=$('.accordion'),
             $link=$accord.find('dt').find('a'),
                 $content=$accord.find('.content');
@@ -161,12 +117,10 @@
             $content.eq($(this).index()).fadeIn()
                 .siblings('.content').fadeOut();
         });
-    }
+    }*/
     function start() {
-        //加入我们
-         scrollTop();
         //选项卡
-         tab();
+        //  tab();
     }
     return {
         start: start

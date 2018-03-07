@@ -69,12 +69,12 @@
     }*/
 
     //我们的产品适配手机
-    function itemBox() {
+   /* function itemBox() {
         $('.item-box').on('touchend', function (e) {
             $('.dl-product').find('li').removeClass('active');
             $(this).closest('li').addClass('active');
         });
-    }
+    }*/
 
     //发送短信验证码输入框显示
     // function showMsgCode() {
@@ -92,7 +92,7 @@
         //发送短信验证码输入框显示
         //showMsgCode();
         //我们的产品适配手机
-        itemBox();
+        // itemBox();
     }
 
     return {

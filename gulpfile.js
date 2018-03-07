@@ -166,7 +166,7 @@ gulp.task('dev-css-min', function () {
         "!./public/stylesheets/less/*.less",
         "./public/stylesheets/**/*.less"
     ]).pipe(less())
-        .pipe(concat('carLoan-main.css'))
+        .pipe(concat('changXinKeJi-main.css'))
         .pipe(gulp.dest('./public/css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
@@ -175,7 +175,7 @@ gulp.task('dev-css-min', function () {
 /* js compress : merge & compress */
 gulp.task('dev-js-min',function(){
     gulp.src("./public/javascripts/**/*.js")
-    .pipe(concat('carLoan-main.js'))
+    .pipe(concat('changXinKeJi-main.js'))
         .pipe(gulp.dest('./public/js'))
      .pipe(uglify({
         mangle: true,//类型：Boolean 默认：true 是否修改变量名

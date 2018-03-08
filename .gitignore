@@ -5,6 +5,8 @@
 
 # production
 /dist
+public/js
+public/css
 
 # misc
 .DS_Store

@@ -25,7 +25,12 @@ html(lang="zh-CN")
                 a(href="/").logo 甲乙车贷
             .col-80
                 nav.text-right
-                    -var navBar=[{'title':'首页 HOME','href':'/'},{'title':'产品 PRODUCT','href':'/?curpage=1'},{'title':'关于 ABOUT US','href':'aboutus.html'}];
+                    -
+                        var navBar=[
+                            {'title':'首页','href':'/'},{'title':'产品中心','href':'/?curpage=1'},
+                            {'title':'案例简介','href':'aboutus.html'},{'title':'服务支持','href':'aboutus.html'},
+                            {'title':'关于我们','href':'aboutus.html'},{'title':'免费试用 ','href':'aboutus.html'}
+                        ];
                     each item,i in navBar
                         a(href=item.href class=(curPage===item.title)?'active':'') #{item.title}
                             if curPage===item.title
@@ -34,19 +39,18 @@ html(lang="zh-CN")
       footer#footer
         .container
             .row
-                .col-80
-                    -var links=[{'title':'关于我们','href':'aboutus.html'},{'title':'加入我们','href':'aboutus.html?join=1'}];
-                    .links
-                        each item,i in links
-                            a(href=item.href) #{item.title}
-                            unless i===links.length-1
-                                span |
-                    p.copyright  经营地址：北京市丰台科技园区汉威广场11号楼&emsp;<br>©-2017 京ICP备16019607号-4&emsp;版权所有：甲乙车贷
-                .col-20
-                    div.hot-line
-                        span 企业服务热线：
-                        div.phone 010-88685678
-                        span 周一至周五&nbsp;9:00-18:00
+               .col-25
+                   a(href='/').footer-logo logo图片
+               .col-60
+                    nav
+                        a(href='#') 售前流程
+                        a(href='#') 售后流程
+                        a(href='#') 公司简介
+                        a(href='#') 售后流程
+                        a(href='#') 资质荣誉
+                    p 热线电话  01057106392 &emsp;&emsp;&emsp;&emsp;周一至周日9:30—18:30
+
+               .col-15 ertyui
 
       script(src="/libs/jquery-1.9.1.min.js")
       script(src="/js/changXinKeJi-main.min.js")

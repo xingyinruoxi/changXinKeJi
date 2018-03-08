@@ -5,8 +5,13 @@
 
 # production
 /dist
+<<<<<<< HEAD
+public/js
+public/css
+=======
 public/css
 public/js
+>>>>>>> fec30dcfa4b8035c52092a7ac956166dbac355f0
 
 # misc
 .DS_Store

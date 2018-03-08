@@ -1,101 +1,106 @@
-'use strict';
-(function () {
-   /* if(window.location.search.indexOf('join')>0){
-        $('html,body').animate({'scrollTop':'1496px'});
-    }*/
+//current position
+var pos = 0;
+//number of slides
+var totalSlides = $('#slider-wrap ul li').length;
+//get the slide width
+var sliderWidth = $('#slider-wrap').width();
 
-    //轮播图
-    /*function carousel() {
-        var oWrap = $('.carousel_wrapper'),
-            oUl = oWrap.find('ul').eq(0),
-            aLi = oUl.find('li'),
-            aImg = oUl.find('img'),
-            oPagination = oWrap.find('.carousel-pagination'),
-            aNavA = oPagination.find('a');
-        var imgWidth = 1920,
-            iNow = 0,
-            timer = null,
-            length = aLi.length;
-        oUl.css('width', aImg.length * imgWidth);
+console.log(totalSlides,'num')
+$(document).ready(function(){
 
-        function toReSize() {
-            var viewWidth = $(window).width();
-            if (viewWidth > 1240) {
-                for (var i = 0; i < aImg.length; i++) {
-                    aImg.eq(i).css('left', -(imgWidth - viewWidth) / 2);
-                }
-            }
-        }
 
-        toReSize();
-        $(window).resize(function () {
-            toReSize();
-        });
-       /!* aNavA.on('click', function () {
-            iNow = $(this).index();
-            $(this).addClass('active').siblings('a').removeClass('active');
-            oUl.animate({'left': -iNow * imgWidth}, 'linear');
-        });*!/
+    /*****************
+     BUILD THE SLIDER
+     *****************/
+    //set width to be 'x' times the number of slides
+    $('#slider-wrap ul#slider').width(sliderWidth*totalSlides);
 
-       /!* function toRun() {
-            iNow++;
-            if (iNow === length - 1) {
-                aLi.eq(0).css({
-                    'left': (length) * imgWidth,
-                    'position': 'relative'
-                });
-            } else if (iNow > length - 1) {
-                aNavA.eq(0).addClass('active').siblings('a').removeClass('active');
-            }
-            aNavA.eq(iNow).addClass('active').siblings('a').removeClass('active');
-            oUl.animate({'left': -iNow * imgWidth}, 'linear', function () {
-                if (iNow > length - 1) {
-                    oUl.css('left', 0);
-                    iNow = 0;
-                    aLi.eq(0).css({
-                        'left': 0,
-                        'position': 'relative'
-                    });
-                }
-            });
-        }*!/
+    //next slide
+    $('#next').click(function(){
+        slideRight();
+    });
 
-        /!*timer = setInterval(toRun, 3000);
-        oWrap.hover(function () {
-            clearInterval(timer);
-        }, function () {
-            timer = setInterval(toRun, 3000);
-        });*!/
-    }*/
+    //previous slide
+    $('#previous').click(function(){
+        slideLeft();
+    });
 
-    //我们的产品适配手机
-   /* function itemBox() {
-        $('.item-box').on('touchend', function (e) {
-            $('.dl-product').find('li').removeClass('active');
-            $(this).closest('li').addClass('active');
-        });
-    }*/
 
-    //发送短信验证码输入框显示
-    // function showMsgCode() {
-    //     var inputTel=$('#inputTel'),
-    //         msgCode=$('#msgCode');
-    //     inputTel.on('focus',function () {
-    //         msgCode.removeClass('hidden');
-    //     });
-    // }
 
-    function start() {
+    /*************************
+     //*> OPTIONAL SETTINGS
+     ************************/
+        //automatic slider
+    var autoSlider = setInterval(slideRight, 3000);
 
-        //轮播图
-        // carousel();
-        //发送短信验证码输入框显示
-        //showMsgCode();
-        //我们的产品适配手机
-        // itemBox();
-    }
+    //for each slide
+    $.each($('#slider-wrap ul li'), function() {
+        //set its color
+        var c = $(this).attr("data-color");
+        $(this).css("background",c);
 
-    return {
-        start: start
-    }
-}()).start();
+        //create a pagination
+        var li = document.createElement('li');
+        $('#pagination-wrap ul').append(li);
+    });
+
+    //counter
+    countSlides();
+
+    //pagination
+    pagination();
+
+    //hide/show controls/btns when hover
+    //pause automatic slide when hover
+    $('#slider-wrap').hover(
+        function(){ $(this).addClass('active'); clearInterval(autoSlider); },
+        function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
+    );
+
+
+
+});//DOCUMENT READY
+
+
+
+/***********
+ SLIDE LEFT
+ ************/
+function slideLeft(){
+    pos--;
+    if(pos==-1){ pos = totalSlides-1; }
+    $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos));
+
+    //*> optional
+    countSlides();
+    pagination();
+}
+
+
+/************
+ SLIDE RIGHT
+ *************/
+function slideRight(){
+    pos++;
+    if(pos==totalSlides){ pos = 0; }
+    $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos));
+
+    //*> optional
+    countSlides();
+    pagination();
+}
+
+
+
+
+/************************
+ //*> OPTIONAL SETTINGS
+ ************************/
+function countSlides(){
+    $('#counter').html(pos+1 + ' / ' + totalSlides);
+}
+
+function pagination(){
+    $('#pagination-wrap ul li').removeClass('active');
+    $('#pagination-wrap ul li:eq('+pos+')').addClass('active');
+}

@@ -1,6 +1,52 @@
 extends layout
+block css
+    style.
+        .banner {
+            background: red;
+            height:662px;
+        }
+        #header{background: rgba(0,0,0,.5); position: absolute;width: 100%;top:0}
 block content
-    //我的产品
-    section.bg-gray.section_product
-        .container gfdertyuio;
-            p wertyuiop
+    div.banner banner图
+    section.container
+        //核心产品
+        dl.dl-product
+            dt
+                h4 核心产品
+                p Independent  and  Innovative  Fintech Expert
+            dd 345678
+        //轮播图
+        div#wrapper
+            div#slider-wrap
+                ul#slider
+                    li(data-color="#1abc9c")
+                        div
+                            h3 Slide #1
+                            span Sub-title #1
+                    li(data-color="#3498db")
+                        div
+                            h3 Slide #2
+                            span Sub-title #2
+                    li(data-color="#9b59b6")
+                        div
+                            h3 Slide #3
+                            span Sub-title #3
+                    li(data-color="#34495e")
+                        div
+                            h3 Slide #4
+                            span Sub-title #4
+                    li(data-color="#e74c3c")
+                        div
+                            h3 Slide #5
+                            span Sub-title #5
+                //controls
+                div.btns#next 下一页
+                div.btns#previous 上一页
+                //pagination-wrap
+                div#pagination-wrap
+                    ul
+
+        //合作伙伴
+        dl.dl-partner
+            dt 合作伙伴
+            dd

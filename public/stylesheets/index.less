@@ -5,11 +5,11 @@
 核心产品
 */
 .dl-product {
-
-  dt {
+  >dt {
     @h: 190px;
     height: @h;
     text-align: center;
+
     h4 {
       padding-top:50px;
       font-size: 40px;
@@ -21,6 +21,95 @@
       line-height: 30px;
     }
   }
+}
+.item-product{
+  .transition(1s);
+  border: 1px solid #E9E9E9;
+  width: 360px;
+  height:360px;
+  position: relative;
+  margin-bottom:30px;
+  cursor: pointer;
+  float: left;
+  margin-right:25px;
+  &:nth-child(3n){
+    margin-right:0;
+    float: right;
+  }
+  .mask{
+    .transition(1s);
+    display: none;
+    padding:0;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
+    background: #005AEE;
+    color: #fff;
+    header{
+      display: block;
+      width: 136px;
+      height:136px;
+      margin:0 auto;
+      border: 1px solid #fff;
+      border-bottom:none;
+      border-top:none;
+      margin-bottom:40px;
+      text-align: center;
+      background: url("../images/index/bg01.png") no-repeat bottom center;
+      span{
+        display: block;
+        font-size:54px;
+        line-height:60px;
+        padding-top:20px;
+      }
+    }
+    section{
+      padding:0 8px;
+      line-height:26px;
+      margin-bottom:10px;
+    }
+    .btn-detail{
+      width: 164px;
+      height:30px;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      background: #ffffff;
+      line-height: 30px;
+      font-size: 18px;
+      color: #005AEE;
+      .border-radius(3px)
+      &:hover{
+
+      }
+    }
+  }
+  &:hover{
+    .mask{
+      display: block;
+    }
+  }
+  h5{
+    font-size:18px;
+    padding:10px 0;
+    color: #000;
+  }
+  dt{
+    padding-bottom:10px;
+  }
+  dd{
+    .transition(1s);
+    padding:0 20px;
+    color: #666666;
+    line-height: 22px;
+  }
+  .content{
+    padding:0 20px;
+  }
+
+
 }
 //轮播图
 #wrapper{
@@ -60,7 +149,6 @@
   font-size:90px;
 }
 
-
 /*btns*/
 .btns{
   position:absolute;
@@ -96,6 +184,9 @@
 
 #slider-wrap.active #next{right:0px;}
 #slider-wrap.active #previous{left:0px;}
+.dl-partner{
+  margin-top:30px;
+}
 
 
 /*bar*/

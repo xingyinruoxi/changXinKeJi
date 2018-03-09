@@ -486,6 +486,7 @@ label.error {
   color: #333333;
   display: inline-block;
   margin-right: 84px;
+  text-decoration: underline;
 }
 #footer a:hover {
   font-size: 12px;
@@ -980,6 +981,7 @@ label.error {
   color: #333333;
   display: inline-block;
   margin-right: 84px;
+  text-decoration: underline;
 }
 #footer a:hover {
   font-size: 12px;
@@ -988,19 +990,109 @@ label.error {
 /*
 核心产品
 */
-.dl-product dt {
+.dl-product > dt {
   height: 190px;
   text-align: center;
 }
-.dl-product dt h4 {
+.dl-product > dt h4 {
   padding-top: 50px;
   font-size: 40px;
   line-height: 50px;
   padding-bottom: 10px;
 }
-.dl-product dt p {
+.dl-product > dt p {
   font-size: 20px;
   line-height: 30px;
+}
+.item-product {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  border: 1px solid #E9E9E9;
+  width: 360px;
+  height: 360px;
+  position: relative;
+  margin-bottom: 30px;
+  cursor: pointer;
+  float: left;
+  margin-right: 25px;
+}
+.item-product:nth-child(3n) {
+  margin-right: 0;
+  float: right;
+}
+.item-product .mask {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  display: none;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #005AEE;
+  color: #fff;
+}
+.item-product .mask header {
+  display: block;
+  width: 136px;
+  height: 136px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  border-bottom: none;
+  border-top: none;
+  margin-bottom: 40px;
+  text-align: center;
+  background: url("../images/index/bg01.png") no-repeat bottom center;
+}
+.item-product .mask header span {
+  display: block;
+  font-size: 54px;
+  line-height: 60px;
+  padding-top: 20px;
+}
+.item-product .mask section {
+  padding: 0 8px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+.item-product .mask .btn-detail {
+  width: 164px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background: #ffffff;
+  line-height: 30px;
+  font-size: 18px;
+  color: #005AEE;
+}
+.item-product:hover .mask {
+  display: block;
+}
+.item-product h5 {
+  font-size: 18px;
+  padding: 10px 0;
+  color: #000;
+}
+.item-product dt {
+  padding-bottom: 10px;
+}
+.item-product dd {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  padding: 0 20px;
+  color: #666666;
+  line-height: 22px;
+}
+.item-product .content {
+  padding: 0 20px;
 }
 #wrapper {
   width: 1140px;
@@ -1072,6 +1164,9 @@ label.error {
 }
 #slider-wrap.active #previous {
   left: 0px;
+}
+.dl-partner {
+  margin-top: 30px;
 }
 /*bar*/
 #pagination-wrap {
@@ -1598,6 +1693,7 @@ label.error {
   color: #333333;
   display: inline-block;
   margin-right: 84px;
+  text-decoration: underline;
 }
 #footer a:hover {
   font-size: 12px;

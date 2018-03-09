@@ -3,5 +3,5 @@ var router = express.Router();
 
 router.use('/',  require('./index'));
 
-router.use('/',  require('./r_aboutus'));
+router.use('/',  require('./r_p2p'));
 module.exports = router;

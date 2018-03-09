@@ -36,6 +36,18 @@
     margin-right:0;
     float: right;
   }
+  label{
+    position: absolute;
+    display: block;
+    width: 140px;
+    height:30px;
+    line-height: 30px;
+    top:14px;
+    font-size:16px;
+    text-indent: 12px;
+    color: #ffffff;
+    background: url("../images/index/bg-title.png") no-repeat;
+  }
   .mask{
     .transition(1s);
     display: none;
@@ -117,6 +129,7 @@
   height:600px;
   position:relative;
   color:#fff;
+  margin-bottom:30px;
 }
 
 #slider-wrap{
@@ -151,6 +164,7 @@
 
 /*btns*/
 .btns{
+
   position:absolute;
   width:50px;
   height:60px;
@@ -161,7 +175,6 @@
   cursor:pointer;
   background:rgba(0,0,0,0.1);
   z-index:100;
-
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -176,11 +189,16 @@
 }
 
 .btns:hover{
-  background:rgba(0,0,0,0.3);
+  background-color:rgba(0,0,0,0.3);
+
 }
 
-#next{right:-50px; border-radius:7px 0px 0px 7px;}
-#previous{left:-50px; border-radius:0px 7px 7px 7px;}
+#next{right:-50px; border-radius:7px 0px 0px 7px; background-image: url("../images/index/next.png"); background-repeat: no-repeat;
+  background-position: center;}
+#previous{left:-50px; border-radius:0px 7px 7px 7px; background-image: url("../images/index/prev.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 #slider-wrap.active #next{right:0px;}
 #slider-wrap.active #previous{left:0px;}

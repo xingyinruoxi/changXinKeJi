@@ -2,10 +2,11 @@ extends layout
 block css
     style.
         .banner {
-            background: red;
-            height:662px;
+           background:#313131 url("/images/index/banner.png") center no-repeat;
+            height:660px;
         }
-        #header{background: rgba(0,0,0,.5); position: absolute;width: 100%;top:0}
+        #header{background: rgba(0,0,0,.5); position: fixed;width: 100%;top:0;
+            z-index:7;}
 block content
     div.banner banner图
     section.container
@@ -20,7 +21,8 @@ block content
                         li.item-product
                             dl
                                 dt
-                                    img(src='../images/index/itemPic01.png' width='360')
+                                    img(src='../images/index/itemPic0'+(i+1)+'.png' width='360')
+                                    label 消费金融
                                 dd
                                     h5 消费金融
                                     p 随着现代信息科技的迅速发展，加之互联网企业不断向金融领域渗透，并将发源于互联网行业的IT技术和理念向金融行业转移，伴随着云计算、区块链、搜索引擎、移动支付等在金融行业的应用
@@ -57,11 +59,23 @@ block content
                             h3 Slide #5
                             span Sub-title #5
                 //controls
-                div.btns#next 下一页
-                div.btns#previous 上一页
+                div.btns#next &nbsp;
+                div.btns#previous &nbsp;
                 //pagination-wrap
                 div#pagination-wrap
                     ul
+          dl.dl-product.clearfix
+              dd
+                  ul.list-product
+                      - for(i=0;i<3;i++)
+                          li.item-product
+                              dl
+                                  dt
+                                      img(src='../images/index/itemPic0'+(i+1)+'.png' width='360')
+                                      label 消费金融
+                                  dd
+                                      h5 消费金融
+                                      p 随着现代信息科技的迅速发展，加之互联网企业不断向金融领域渗透，并将发源于互联网行业的IT技术和理念向金融行业转移，伴随着云计算、区块链、搜索引擎、移动支付等在金融行业的应用
 
         //合作伙伴
         dl.dl-partner

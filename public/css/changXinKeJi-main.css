@@ -444,10 +444,10 @@ label.error {
   padding-top: 16px;
 }
 #header .logo {
-  width: 142px;
-  height: 44px;
+  width: 152px;
+  height: 40px;
   display: inline-block;
-  background: url("../images/logo.png");
+  background: url("../images/logo.png") no-repeat left center;
   overflow: hidden;
   text-indent: -2000px;
 }
@@ -468,11 +468,16 @@ label.error {
   font-size: 12px;
   color: #333333;
 }
+#footer .code {
+  height: 40px;
+  margin-top: 35px;
+  background: url("../images/code.png") no-repeat right;
+}
 #footer .footer-logo {
-  width: 142px;
+  width: 155px;
   height: 44px;
   display: inline-block;
-  background: url("../images/logo.png");
+  background: url("../images/logo-footer.png") no-repeat;
   overflow: hidden;
   text-indent: -2000px;
   margin-top: 36px;
@@ -939,10 +944,10 @@ label.error {
   padding-top: 16px;
 }
 #header .logo {
-  width: 142px;
-  height: 44px;
+  width: 152px;
+  height: 40px;
   display: inline-block;
-  background: url("../images/logo.png");
+  background: url("../images/logo.png") no-repeat left center;
   overflow: hidden;
   text-indent: -2000px;
 }
@@ -963,11 +968,16 @@ label.error {
   font-size: 12px;
   color: #333333;
 }
+#footer .code {
+  height: 40px;
+  margin-top: 35px;
+  background: url("../images/code.png") no-repeat right;
+}
 #footer .footer-logo {
-  width: 142px;
+  width: 155px;
   height: 44px;
   display: inline-block;
-  background: url("../images/logo.png");
+  background: url("../images/logo-footer.png") no-repeat;
   overflow: hidden;
   text-indent: -2000px;
   margin-top: 36px;
@@ -1021,6 +1031,18 @@ label.error {
 .item-product:nth-child(3n) {
   margin-right: 0;
   float: right;
+}
+.item-product label {
+  position: absolute;
+  display: block;
+  width: 140px;
+  height: 30px;
+  line-height: 30px;
+  top: 14px;
+  font-size: 16px;
+  text-indent: 12px;
+  color: #ffffff;
+  background: url("../images/index/bg-title.png") no-repeat;
 }
 .item-product .mask {
   -webkit-transition: 1s;
@@ -1099,6 +1121,7 @@ label.error {
   height: 600px;
   position: relative;
   color: #fff;
+  margin-bottom: 30px;
 }
 #slider-wrap {
   width: 1140px;
@@ -1149,15 +1172,21 @@ label.error {
   transition: all 0.1s ease;
 }
 .btns:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 #next {
   right: -50px;
   border-radius: 7px 0px 0px 7px;
+  background-image: url("../images/index/next.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 #previous {
   left: -50px;
   border-radius: 0px 7px 7px 7px;
+  background-image: url("../images/index/prev.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 #slider-wrap.active #next {
   right: 0px;
@@ -1651,10 +1680,10 @@ label.error {
   padding-top: 16px;
 }
 #header .logo {
-  width: 142px;
-  height: 44px;
+  width: 152px;
+  height: 40px;
   display: inline-block;
-  background: url("../images/logo.png");
+  background: url("../images/logo.png") no-repeat left center;
   overflow: hidden;
   text-indent: -2000px;
 }
@@ -1675,11 +1704,16 @@ label.error {
   font-size: 12px;
   color: #333333;
 }
+#footer .code {
+  height: 40px;
+  margin-top: 35px;
+  background: url("../images/code.png") no-repeat right;
+}
 #footer .footer-logo {
-  width: 142px;
+  width: 155px;
   height: 44px;
   display: inline-block;
-  background: url("../images/logo.png");
+  background: url("../images/logo-footer.png") no-repeat;
   overflow: hidden;
   text-indent: -2000px;
   margin-top: 36px;

@@ -35,7 +35,9 @@ html(lang="zh-CN")
                         a(href=item.href class=(curPage===item.title)?'active':'') #{item.title}
                             if curPage===item.title
                                 i.ico.ico-fire
+      //内容主体
       block content
+      //底部
       footer#footer
         .container
             .row
@@ -46,11 +48,12 @@ html(lang="zh-CN")
                         a(href='#') 售前流程
                         a(href='#') 售后流程
                         a(href='#') 公司简介
-                        a(href='#') 售后流程
+                        a(href='#') 公司大事记
                         a(href='#') 资质荣誉
                     p 热线电话  01057106392 &emsp;&emsp;&emsp;&emsp;周一至周日9:30—18:30
 
-               .col-15 ertyui
+               .col-15
+                   div.code &nbsp;
 
       script(src="/libs/jquery-1.9.1.min.js")
       script(src="/js/changXinKeJi-main.min.js")

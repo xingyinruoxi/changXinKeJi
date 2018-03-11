@@ -6,7 +6,7 @@ html(lang="zh-CN")
     meta(name="renderer" content="webkit")
     meta(name="viewport",content="width=device-width, initial-scale=0.3, maximum-scale=1, user-scalable=yes")
     //上述4个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！
-    title= '甲乙车贷'
+    title= '息引力科技'
     meta(name="keywords",content="#")
     meta(name="description",content="#")
     meta(name="author",content="#")
@@ -21,20 +21,18 @@ html(lang="zh-CN")
       header#header
         .container
             .col-20
-                h1.hidden 甲乙车贷
-                a(href="/").logo 甲乙车贷
+                h1.hidden 息引力科技
+                a(href="/").logo 息引力科技
             .col-80
                 nav.text-right
                     -
                         var navBar=[
-                            {'title':'首页','href':'/'},{'title':'产品中心','href':'/?curpage=1'},
-                            {'title':'案例简介','href':'aboutus.html'},{'title':'服务支持','href':'aboutus.html'},
-                            {'title':'关于我们','href':'aboutus.html'},{'title':'免费试用 ','href':'aboutus.html'}
+                            {'title':'首页','href':'/'},{'title':'产品中心','href':'#'},
+                            {'title':'案例简介','href':'#'},{'title':'服务支持','href':'#'},
+                            {'title':'关于我们','href':'#'},{'title':'免费试用 ','href':'#'}
                         ];
                     each item,i in navBar
                         a(href=item.href class=(curPage===item.title)?'active':'') #{item.title}
-                            if curPage===item.title
-                                i.ico.ico-fire
       //内容主体
       block content
       //底部
